@@ -1,0 +1,452 @@
+/* Rochushof Caddie – mobile-first, hoher Kontrast, sonnenlichttauglich.
+   Systemfonts (SF auf iOS) -> offline, nativer Look, keine externen Fonts. */
+
+:root {
+  --gruen: #0b6e33;
+  --gruen-dunkel: #084d24;
+  --gruen-hell: #e6f4ea;
+  --rot: #b3261e;
+  --gelb: #f5c518;
+  --tinte: #10231a; /* fast schwarz, hoher Kontrast */
+  --grau: #5b6b62;
+  --linie: #c9d6cd;
+  --flaeche: #ffffff;
+  --flaeche-2: #f4f7f5;
+  --touch: 48px; /* > 44pt */
+  --radius: 14px;
+  --schatten: 0 2px 8px rgba(8, 40, 24, 0.12);
+  font-size: 18px;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--flaeche-2);
+  color: var(--tinte);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  overscroll-behavior-y: contain;
+}
+
+#app {
+  max-width: 560px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Kopf --- */
+.appbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--gruen);
+  color: #fff;
+  padding: calc(env(safe-area-inset-top) + 10px) 16px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: var(--schatten);
+}
+.appbar h1 {
+  font-size: 1.15rem;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+.appbar .back {
+  background: rgba(255, 255, 255, 0.16);
+  border: none;
+  color: #fff;
+  min-width: var(--touch);
+  min-height: var(--touch);
+  border-radius: 12px;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+.appbar .spacer {
+  flex: 1;
+}
+
+main {
+  flex: 1;
+  padding: 16px;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 24px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* --- Karten --- */
+.card {
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--schatten);
+}
+.card h2 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+  color: var(--gruen-dunkel);
+}
+.muted {
+  color: var(--grau);
+  font-size: 0.9rem;
+}
+.hinweis {
+  background: var(--gruen-hell);
+  border-left: 4px solid var(--gruen);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+}
+.warn {
+  background: #fdecea;
+  border-left: 4px solid var(--rot);
+  color: var(--rot);
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+/* --- Buttons --- */
+button,
+.btn {
+  font: inherit;
+  min-height: var(--touch);
+  border-radius: 12px;
+  border: 2px solid transparent;
+  padding: 10px 16px;
+  background: var(--flaeche);
+  color: var(--tinte);
+  font-weight: 600;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+button.primary,
+.btn.primary {
+  background: var(--gruen);
+  color: #fff;
+}
+button.primary:active {
+  background: var(--gruen-dunkel);
+}
+button.ghost {
+  background: var(--flaeche);
+  border-color: var(--linie);
+}
+button.danger {
+  background: #fff;
+  color: var(--rot);
+  border-color: var(--rot);
+}
+button:disabled {
+  opacity: 0.4;
+}
+.btn-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.btn-row > * {
+  flex: 1;
+}
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* --- Formulare --- */
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+input[type='text'],
+input[type='number'],
+input[inputmode] {
+  width: 100%;
+  min-height: var(--touch);
+  font-size: 1.2rem;
+  padding: 10px 12px;
+  border: 2px solid var(--linie);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--tinte);
+}
+.seg {
+  display: flex;
+  gap: 8px;
+}
+.seg button {
+  flex: 1;
+  border: 2px solid var(--linie);
+}
+.seg button[aria-pressed='true'] {
+  background: var(--gruen);
+  color: #fff;
+  border-color: var(--gruen);
+}
+.field {
+  margin-bottom: 14px;
+}
+
+/* --- Zähl-Modus --- */
+.hole {
+  text-align: center;
+}
+.hole-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+.hole-nr {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--gruen-dunkel);
+}
+.hole-meta {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  color: var(--grau);
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+.hole-meta b {
+  color: var(--tinte);
+}
+.vorgabe-striche {
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  color: var(--gruen);
+  min-height: 1.6rem;
+}
+.score-big {
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1;
+  margin: 8px 0;
+}
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+.counter button {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  font-size: 3rem;
+  font-weight: 800;
+  border: none;
+  color: #fff;
+}
+.counter button.minus {
+  background: var(--grau);
+}
+.counter button.plus {
+  background: var(--gruen);
+}
+.counter button:active {
+  transform: scale(0.96);
+}
+.live {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 12px;
+}
+.live .box {
+  text-align: center;
+}
+.live .box .val {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--gruen-dunkel);
+}
+.live .box .lab {
+  font-size: 0.8rem;
+  color: var(--grau);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hole-nav {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+.hole-nav button {
+  flex: 1;
+}
+
+/* --- Loch-Übersicht Grid --- */
+.holes-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+}
+.holes-grid button {
+  padding: 6px 0;
+  min-height: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--linie);
+  background: #fff;
+}
+.holes-grid button .n {
+  font-weight: 800;
+}
+.holes-grid button .p {
+  font-size: 0.8rem;
+  color: var(--gruen-dunkel);
+  font-weight: 700;
+}
+.holes-grid button.current {
+  border-color: var(--gruen);
+  background: var(--gruen-hell);
+}
+.holes-grid button.empty .p {
+  color: var(--grau);
+}
+
+/* --- Tabellen (Scorecard, Statistik) --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+th,
+td {
+  padding: 7px 6px;
+  text-align: center;
+  border-bottom: 1px solid var(--linie);
+  font-size: 0.9rem;
+}
+th {
+  color: var(--grau);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+td.loch,
+th.loch {
+  text-align: left;
+  font-weight: 700;
+}
+tr.sum td {
+  border-top: 2px solid var(--tinte);
+  font-weight: 800;
+  border-bottom: none;
+}
+.tbl-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* --- Statistik / Kennzahlen --- */
+.kpi-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.kpi {
+  background: var(--gruen-hell);
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+}
+.kpi .val {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--gruen-dunkel);
+}
+.kpi .lab {
+  font-size: 0.8rem;
+  color: var(--grau);
+}
+svg.chart {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Home / Listen --- */
+.menu-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  text-align: left;
+  padding: 16px;
+  border: 1px solid var(--linie);
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--schatten);
+}
+.menu-btn .ico {
+  font-size: 1.6rem;
+}
+.menu-btn .t {
+  font-weight: 700;
+}
+.menu-btn .s {
+  font-size: 0.85rem;
+  color: var(--grau);
+  font-weight: 400;
+}
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 6px;
+  border-bottom: 1px solid var(--linie);
+}
+.list-item .d {
+  font-weight: 700;
+}
+.badge {
+  display: inline-block;
+  background: var(--gruen);
+  color: #fff;
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.badge.wait {
+  background: var(--gelb);
+  color: #4a3b00;
+}
+
+.center {
+  text-align: center;
+}
+.mono {
+  font-variant-numeric: tabular-nums;
+}
+.big-index {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--gruen-dunkel);
+  line-height: 1;
+}
+.footer-note {
+  font-size: 0.78rem;
+  color: var(--grau);
+  text-align: center;
+  padding: 8px 0;
+}

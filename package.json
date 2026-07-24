@@ -13,6 +13,7 @@
     "icons": "node scripts/generate-icons.mjs"
   },
   "devDependencies": {
+    "happy-dom": "^20.11.1",
     "sharp": "^0.33.5",
     "vite": "^5.4.10",
     "vite-plugin-pwa": "^0.20.5",
