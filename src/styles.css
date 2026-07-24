@@ -289,6 +289,7 @@ input[inputmode] {
 }
 .hole-nav button {
   flex: 1;
+  min-height: calc(var(--touch) * 2);
 }
 
 /* --- Loch-Übersicht Grid --- */
