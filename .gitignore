@@ -21,3 +21,6 @@ Thumbs.db
 
 # Temporär
 *.tmp
+
+# Lokale Claude-Code-Konfiguration
+.claude/
