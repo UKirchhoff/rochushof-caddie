@@ -1,0 +1,21 @@
+{
+  "name": "rochushof-caddie",
+  "version": "1.0.0",
+  "description": "Rochushof Caddie – Golf-PWA für den GC Rochushof: Schläge zählen, Stableford live, inoffizieller Handicap-Index. Offline-fähig, alle Daten lokal.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "icons": "node scripts/generate-icons.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5",
+    "vite": "^5.4.10",
+    "vite-plugin-pwa": "^0.20.5",
+    "vitest": "^2.1.4"
+  }
+}

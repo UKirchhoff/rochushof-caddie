@@ -1,0 +1,23 @@
+# Abhängigkeiten
+node_modules/
+
+# Build-Ausgabe
+dist/
+dev-dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Vite / Cache
+.vite/
+*.local
+
+# Temporär
+*.tmp
