@@ -1,0 +1,7 @@
+# Einheitliche Zeilenenden im Repo (LF), Auschecken plattformabhaengig.
+* text=auto eol=lf
+
+# Binaerdateien
+*.png binary
+*.ico binary
+*.jpg binary

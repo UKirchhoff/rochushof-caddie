@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Rochushof Caddie">
+  <!-- Voll ausgefuellter Hintergrund (maskable-tauglich, Safe-Zone in der Mitte) -->
+  <rect width="512" height="512" fill="#0b6e33"/>
+  <!-- Green / Fairway-Andeutung -->
+  <ellipse cx="256" cy="392" rx="168" ry="40" fill="#0a5e2b"/>
+  <!-- Loch -->
+  <ellipse cx="316" cy="392" rx="30" ry="9" fill="#063d1c"/>
+  <!-- Fahnenstange -->
+  <rect x="311" y="150" width="11" height="248" rx="5" fill="#f4f7f5"/>
+  <circle cx="316" cy="150" r="9" fill="#f4f7f5"/>
+  <!-- Fahne (Wimpel nach links) -->
+  <path d="M311 160 L196 196 L311 232 Z" fill="#e63329"/>
+  <path d="M311 160 L196 196 L311 196 Z" fill="#c92720"/>
+  <!-- Golfball -->
+  <circle cx="196" cy="382" r="22" fill="#ffffff"/>
+  <g fill="#cdd8d0">
+    <circle cx="190" cy="376" r="2.4"/>
+    <circle cx="200" cy="376" r="2.4"/>
+    <circle cx="195" cy="384" r="2.4"/>
+    <circle cx="204" cy="384" r="2.4"/>
+    <circle cx="186" cy="384" r="2.4"/>
+  </g>
+</svg>
